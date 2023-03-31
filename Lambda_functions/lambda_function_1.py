@@ -5,7 +5,8 @@ import base64
 s3 = boto3.resource('s3')
 
 def lambda_handler(event, context):
-    """A function to serialize target data from S3"""
+    """A function to serialize target data from S3 adapted from 
+https://boto3.amazonaws.com/v1/documentation/api/1.9.42/guide/s3-example-download-file.html"""
     
     # Get the s3 address from the Step Function event input
     key = event["s3_key"]
